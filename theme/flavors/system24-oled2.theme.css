@@ -1,0 +1,182 @@
+/**
+ * @name system24 (oled black & white)
+ * @description a tui-style discord theme. oled-optimized black & white variant.
+ * @author modified a bit
+ * @version 2.0.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24-tokyo-night.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+    /* font */
+    --font: 'DM Mono';
+    --code-font: 'DM Mono';
+    font-weight: 300;
+    letter-spacing: -0.05ch;
+
+    /* sizes */
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
+
+    /* animation/transition options */
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    /* top bar options */
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+
+    /* window controls */
+    --custom-window-controls: off;
+    --window-control-size: 14px;
+
+    /* dms button options */
+    --custom-dms-icon: off;
+    --dms-icon-svg-url: url('');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--text-4);
+    --dms-icon-color-after: var(--text-1);
+    --custom-dms-background: off;
+    --dms-background-image-url: url('');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(
+        70deg,
+        hsl(0, 0%, 85%),
+        hsl(0, 0%, 65%)
+    );
+
+    /* background image options */
+    --background-image: off;
+    --background-image-url: url('');
+
+    /* transparency/blur options */
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
+
+    /* other options */
+    --small-user-panel: on;
+
+    /* unrounding options */
+    --unrounding: on;
+
+    /* styling options */
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+
+    /* panel labels */
+    --panel-labels: on;
+    --label-color: var(--text-5);
+    --label-font-weight: 500;
+}
+
+/* color options */
+:root {
+    --colors: on;
+
+    /* text colors */
+    --text-0: hsl(0, 0%, 0%);
+    --text-1: hsl(0, 0%, 100%);
+    --text-2: hsl(0, 0%, 95%);
+    --text-3: hsl(0, 0%, 85%);
+    --text-4: hsl(0, 0%, 65%);
+    --text-5: hsl(0, 0%, 45%);
+
+    /* background and dark colors (true OLED black) */
+    --bg-1: hsl(0, 0%, 7%);
+    --bg-2: hsl(0, 0%, 4%);
+    --bg-3: hsl(0, 0%, 0%);
+    --bg-4: hsl(0, 0%, 0%);
+    --hover: hsla(0, 0%, 100%, 0.06);
+    --active: hsla(0, 0%, 100%, 0.12);
+    --active-2: hsla(0, 0%, 100%, 0.18);
+    --message-hover: hsla(0, 0%, 100%, 0.04);
+
+    /* accent colors (neutral grayscale) */
+    --accent-1: hsl(0, 0%, 100%);
+    --accent-2: hsl(0, 0%, 90%);
+    --accent-3: hsl(0, 0%, 80%);
+    --accent-4: hsl(0, 0%, 100%);
+    --accent-5: hsl(0, 0%, 75%);
+    --accent-new: var(--accent-2);
+
+    --mention: linear-gradient(
+        to right,
+        hsla(0, 0%, 100%, 0.10) 40%,
+        transparent
+    );
+    --mention-hover: linear-gradient(
+        to right,
+        hsla(0, 0%, 100%, 0.16) 40%,
+        transparent
+    );
+    --reply: linear-gradient(
+        to right,
+        hsla(0, 0%, 100%, 0.08) 40%,
+        transparent
+    );
+    --reply-hover: linear-gradient(
+        to right,
+        hsla(0, 0%, 100%, 0.14) 40%,
+        transparent
+    );
+
+    /* status indicator colors */
+    --online: hsl(0, 0%, 100%);
+    --dnd: hsl(0, 0%, 55%);
+    --idle: hsl(0, 0%, 75%);
+    --streaming: hsl(0, 0%, 100%);
+    --offline: hsl(0, 0%, 35%);
+
+    /* border colors */
+    --border-light: hsla(0, 0%, 100%, 0.08);
+    --border: hsla(0, 0%, 100%, 0.16);
+    --border-hover: hsl(0, 0%, 100%);
+    --button-border: hsla(0, 0%, 0%, 0);
+
+    /* base colors (compatibility placeholders) */
+    --red-1: hsl(0, 0%, 100%);
+    --red-2: hsl(0, 0%, 90%);
+    --red-3: hsl(0, 0%, 80%);
+    --red-4: hsl(0, 0%, 70%);
+    --red-5: hsl(0, 0%, 60%);
+
+    --green-1: hsl(0, 0%, 100%);
+    --green-2: hsl(0, 0%, 90%);
+    --green-3: hsl(0, 0%, 80%);
+    --green-4: hsl(0, 0%, 70%);
+    --green-5: hsl(0, 0%, 60%);
+
+    --blue-1: hsl(0, 0%, 100%);
+    --blue-2: hsl(0, 0%, 90%);
+    --blue-3: hsl(0, 0%, 80%);
+    --blue-4: hsl(0, 0%, 70%);
+    --blue-5: hsl(0, 0%, 60%);
+
+    --yellow-1: hsl(0, 0%, 100%);
+    --yellow-2: hsl(0, 0%, 90%);
+    --yellow-3: hsl(0, 0%, 80%);
+    --yellow-4: hsl(0, 0%, 70%);
+    --yellow-5: hsl(0, 0%, 60%);
+
+    --purple-1: hsl(0, 0%, 100%);
+    --purple-2: hsl(0, 0%, 90%);
+    --purple-3: hsl(0, 0%, 80%);
+    --purple-4: hsl(0, 0%, 70%);
+    --purple-5: hsl(0, 0%, 60%);
+}
+
